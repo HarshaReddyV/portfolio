@@ -27,15 +27,19 @@ int main(void)
             {
                 printf("  ");
                 for (j = a; j >= 0; j--)
-            {
-                printf("#");
+                {
 
-            }
-            {
-                printf("\n");
-            }
+                    printf("#");
+                }
+                {
+                    printf("\n");
+                }
             }
         }
     }
+
     {}
+
+
+
 }
