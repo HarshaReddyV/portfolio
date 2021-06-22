@@ -14,7 +14,7 @@ int main(void)
    }
    while (i < 0);
 
-   b= (int)i;
+   b = (int)i;
    for(x=0;i!=0;x++)
    {
       y=i % 10;
@@ -22,20 +22,20 @@ int main(void)
 
       if(x%2==0)
       {
-        sum1= sum1+y;
+        sum1 = sum1 + y;
 
       }
       else
       {
-        y=y*2;
+        y = y * 2;
 
-        if(y>10)
+        if(y > 10)
         {
-           for(z=0;y>0;z++)
+           for(z = 0; y > 0; z++)
            {
-             l=y%10;
-             y=y/10;
-             sum2=sum2+l;
+             l = y % 10;
+             y = y / 10;
+             sum2 = sum2 + l;
 
 
            }
@@ -45,7 +45,7 @@ int main(void)
         }
         else
         {
-           sum2=sum2+y;
+           sum2 = sum2 + y;
 
 
         }
@@ -59,8 +59,10 @@ int main(void)
         {
            for(d=0;b>=9;d++)
            {
-             c=b%10;
-             b=b/10;
+             c = (int) b%10;
+             b = (int) b / 10;
+
+
 
 
            }
