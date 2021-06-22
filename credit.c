@@ -65,20 +65,20 @@ int main(void)
            {
               if(b==3)
               {
-                 printf("American Express\n");
+                 printf("AMEX\n");
               }
               else if(b==5)
               {
-                printf("Master Card\n");
+                printf("MASTERCARD\n");
               }
               else if(b==4)
               {
-                printf("Visa\n");
+                printf("VISA\n");
               }
             }
          }
         else
         {
-          printf("card is invalid\n");
+          printf("INVALID\n");
         }
 }
