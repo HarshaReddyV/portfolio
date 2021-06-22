@@ -4,7 +4,7 @@
 int main(void)
 {
    long i,b;
-   int y, x, z, l, a,d,c, sum1, sum2;
+   int y, x, z,p, l, a,d,c, sum1, sum2;
    sum2=0;
    sum1=0;
 
@@ -32,10 +32,10 @@ int main(void)
         y = y * 2;
         if(y > 10)
         {
-           for(z = 0; y > 0; z++)
+           for(z = 0; p> 0; z++)
            {
-             l = y % 10;
-             y = y / 10;
+             l = p % 10;
+             p = p / 10;
              sum2 = sum2 + l;
 
 
@@ -46,7 +46,7 @@ int main(void)
         }
         else
         {
-           sum2 = sum2 + y;
+           sum2 = sum2 + p;
 
 
 
@@ -55,7 +55,9 @@ int main(void)
       }
 
    }
+   {
     a = sum1+sum2;
+      printf("sum1%i\n sum2%i\n",sum1,sum2);
 
         if(a%10==0)
         {
@@ -90,4 +92,5 @@ int main(void)
 
           printf("INVALID\n");
         }
+   }
 }
