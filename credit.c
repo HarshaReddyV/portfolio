@@ -14,7 +14,7 @@ int main(void)
    }
    while (i < 0);
 
-   b=i;
+   b= (int)i;
    for(x=0;i!=0;x++)
    {
       y=i % 10;
@@ -54,6 +54,7 @@ int main(void)
 
    }
     a= sum1+sum2;
+    printf("a value is %i\n",a);
 
         if(a%10==0)
         {
@@ -61,6 +62,9 @@ int main(void)
            {
              c=b%10;
              b=b/10;
+             printf("c value is%i\n",c);
+             printf(" b value is %li\n",b);
+
            }
            {
               if(b==3)
