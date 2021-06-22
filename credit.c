@@ -3,8 +3,8 @@
 
 int main(void)
 {
-   long i,b;
-   int y, x, z, l, a,d,c, sum1, sum2;
+   long i;
+   int y, x, z, l, a,b, d,c, sum1, sum2;
    sum2=0;
    sum1=0;
 
