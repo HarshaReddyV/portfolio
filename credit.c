@@ -3,8 +3,8 @@
 
 int main(void)
 {
-   long i;
-   int y, x, z, l, a,b, d,c, sum1, sum2;
+   long i,b;
+   int y, x, z, l, a,d,c, sum1, sum2;
    sum2=0;
    sum1=0;
 
@@ -13,8 +13,10 @@ int main(void)
       i = get_long( "Enter Card Number:" );
    }
    while (i < 0);
+   b=i;
 
-   b = i;
+
+   printf("%li\n",b);
    for(x=0;i!=0;x++)
    {
       y=i % 10;
