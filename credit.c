@@ -53,20 +53,20 @@ int main(void)
       }
 
    }
-    a= sum1+sum2;
+    a = sum1+sum2;
 
         if(a%10==0)
         {
            for(d=0;b>=9;d++)
            {
-             c = (int) b%10;
-             b = (int) b / 10;
-
+             c = b%10;
+             b =  b / 10;
 
 
 
            }
            {
+
               if(b==3)
               {
                  printf("AMEX\n");
@@ -83,6 +83,7 @@ int main(void)
          }
         else
         {
+          
           printf("INVALID\n");
         }
 }
