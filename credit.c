@@ -24,11 +24,12 @@ int main(void)
       {
         sum1 = sum1 + y;
 
+
       }
       else
       {
-        y = y * 2;
 
+        y = y * 2;
         if(y > 10)
         {
            for(z = 0; y > 0; z++)
@@ -48,6 +49,7 @@ int main(void)
            sum2 = sum2 + y;
 
 
+
         }
 
       }
@@ -57,6 +59,7 @@ int main(void)
 
         if(a%10==0)
         {
+
            for(d=0;b>=9;d++)
            {
              c = b%10;
@@ -83,7 +86,7 @@ int main(void)
          }
         else
         {
-          
+
           printf("INVALID\n");
         }
 }
