@@ -19,7 +19,7 @@ int main(void)
    {
       y=i % 10;
       i=i/10;
-    
+
 
       if(x%2==0)
       {
@@ -58,7 +58,7 @@ int main(void)
    }
    {
     a = sum1+sum2;
-      printf("sum1%i\n sum2%i\n",sum1,sum2);
+
 
         if(a%10==0)
         {
