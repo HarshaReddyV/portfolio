@@ -26,12 +26,13 @@ int main(void)
         sum1 = sum1 + y;
 
 
+
       }
       else
       {
 
         y = y * 2;
-        if(y > 10)
+        if(y >= 10)
         {
            for(z = 0; y > 0; z++)
            {
@@ -51,6 +52,7 @@ int main(void)
 
 
 
+
         }
 
       }
@@ -58,6 +60,7 @@ int main(void)
    }
    {
     a = sum1+sum2;
+
 
 
         if(a%10==0)
