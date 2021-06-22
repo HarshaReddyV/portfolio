@@ -14,7 +14,7 @@ int main(void)
    }
    while (i < 0);
 
-   b = (int)i;
+   b = i;
    for(x=0;i!=0;x++)
    {
       y=i % 10;
