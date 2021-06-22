@@ -60,7 +60,7 @@ int main(void)
         if(a%10==0)
         {
 
-           for(d=0;b>=9;d++)
+           for(d=0;b>9;d++)
            {
              c = b%10;
              b =  b / 10;
@@ -69,6 +69,7 @@ int main(void)
 
            }
            {
+
 
               if(b==3)
               {
