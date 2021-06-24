@@ -103,7 +103,7 @@ int main(void)
                   }
 
               }
-              else if(b<=40 && b<=49)
+              else if(b>=40 && b<=49)
               {
                 if(d==12 || d==15)
                 {
