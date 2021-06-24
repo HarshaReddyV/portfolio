@@ -68,7 +68,7 @@ int main(void)
         if(a%10==0)
         {
 
-           for(d=0;b>9;d++)
+           for(d=1;b>99;d++)
            {
              c = b%10;
              b =  b / 10;
@@ -79,17 +79,41 @@ int main(void)
            {
 
 
-              if(b==3)
+              if(b==34 || b==37)
               {
-                 printf("AMEX\n");
+                 if(d==15)
+                 {
+                     printf("AMEX\n");
+                 }
+                 else
+                 {
+                    printf("INVALID\n");
+                 }
+
               }
-              else if(b==5)
+              else if(b>=51 && b<=55)
               {
-                printf("MASTERCARD\n");
+                  if(d==16)
+                  {
+                     printf("MASTERCARD\n");
+                  }
+                  else
+                  {
+                     printf("INVALID\n");
+                  }
+
               }
-              else if(b==4)
+              else if(b<=40 && b<=49)
               {
-                printf("VISA\n");
+                if(d==13 || d==16)
+                {
+                    printf("VISA\n");
+                }
+                else
+                {
+                   printf("INVALID\n");
+                }
+
               }
             }
          }
