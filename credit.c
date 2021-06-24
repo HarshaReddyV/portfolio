@@ -81,7 +81,7 @@ int main(void)
 
               if(b==34 || b==37)
               {
-                 if(d==15)
+                 if(d==14)
                  {
                      printf("AMEX\n");
                  }
@@ -93,7 +93,7 @@ int main(void)
               }
               else if(b>=51 && b<=55)
               {
-                  if(d==16)
+                  if(d==15)
                   {
                      printf("MASTERCARD\n");
                   }
@@ -105,7 +105,7 @@ int main(void)
               }
               else if(b<=40 && b<=49)
               {
-                if(d==13 || d==16)
+                if(d==12 || d==15)
                 {
                     printf("VISA\n");
                 }
@@ -114,6 +114,10 @@ int main(void)
                    printf("INVALID\n");
                 }
 
+              }
+              else
+              {
+                 printf("INVALID\n");
               }
             }
          }
