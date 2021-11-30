@@ -21,20 +21,21 @@ int main(int argc, char *argv[])
         return 1;
     }
 
+    //checking jpg type
 
+    BYTE buffer[block_size];
 
-   int counter = 0;
-   char filename[8];
-   FILE* outputptr = NULL;
-   BYTE buffer[block_size];
+    buffer = fread(&buffer,sizeof(BYTE),512,file);
 
-   if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff )
-   {
-       if((buffer[3]*0xf0) == 0xe0)
+    while(file == NULL)
+    {
+        if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3]*0xf0) == 0xe0 )
        {
-
+          
        }
-   }
+
+    }
+
 
 
 
