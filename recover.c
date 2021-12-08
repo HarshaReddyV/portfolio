@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
              sprintf(filename ,"%03i.jpg",current_file_number);
              current_file = fopen(filename,"w");
 
-             fwrite(buffer,sizeof(BYTE),Block_size,current_file);
+             fwrite(buffer,sizeof(BYTE),bytes_read,current_file);
              current_file_number++;
 
          }
