@@ -53,13 +53,14 @@ int main(int argc, char *argv[])
                  fclose(current_file);
              }
 
-             sprintf(filename ,"%03i",current_file_number);
+             sprintf(filename ,"%03i.jpg",current_file_number);
              current_file = fopen(filename,"w");
 
              fwrite(buffer,sizeof(BYTE),Block_size,current_file);
              current_file_number++;
 
          }
+         
          else
          {
             if(found_jpg)
