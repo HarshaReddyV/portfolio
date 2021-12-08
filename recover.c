@@ -1,12 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include<stdint.h>
-#include<cs50.h>
 #include<stdbool.h>
+#include<cs50.h>
 
-#define FILE_NAME_SIZE 8
-
-
+#define Block_size 512
 
 int main(int argc, char *argv[])
 {
@@ -18,8 +16,7 @@ int main(int argc, char *argv[])
    }
 
     typedef uint8_t BYTE;
-    const int block_size = 512;
-    BYTE buffer[block_size];
+    BYTE buffer[Block_size];
     size_t bytes_read;
     bool is_first_jpg = false;
     FILE *current_file;
@@ -37,7 +34,7 @@ int main(int argc, char *argv[])
     //checking jpg type
     while(true)
     {
-        bytes_read = fread(buffer,sizeof(BYTE),block_size,infile);
+        bytes_read = fread(buffer,sizeof(BYTE),Block_size,infile);
 
         if(bytes_read == 0)
         {
@@ -54,12 +51,12 @@ int main(int argc, char *argv[])
              else
              {
                  fclose(current_file);
-
              }
-             sprintf(filename , "%03i",current_file_number);
+
+             sprintf(filename ,"%03i",current_file_number);
              current_file = fopen(filename,"w");
 
-               fwrite(buffer,sizeof(BYTE),block_size,current_file);
+             fwrite(buffer,sizeof(BYTE),Block_size,current_file);
              current_file_number++;
 
          }
@@ -67,7 +64,7 @@ int main(int argc, char *argv[])
          {
             if(found_jpg)
             {
-                fwrite(buffer,sizeof(BYTE),block_size,current_file);
+                fwrite(buffer,sizeof(BYTE),Block_size,current_file);
             }
          }
 
