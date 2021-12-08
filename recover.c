@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
     //checking jpg type
     while(true)
     {
-        bytes_read = fread(buffer,sizeof(BYTE),Block_size,infile);
+        bytes_read = fread(buffer,sizeof(BYTE),1,infile);
 
         if(bytes_read == 0)
         {
