@@ -6,8 +6,6 @@
 
 #define FILE_NAME_SIZE 8
 
-bool is_a_jpg(uint8_t BYTE);
-
 
 
 int main(int argc, char *argv[])
@@ -81,13 +79,8 @@ int main(int argc, char *argv[])
 
 fclose(infile);
 fclose(current_file);
+return 0;
 
 
 }
 
-bool is_a_jpg(uint8_t BYTE)
-{
-
-
-       return false;
-}
