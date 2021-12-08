@@ -20,7 +20,7 @@ int main(int argc, char *argv[])
     size_t bytes_read;
     bool is_first_jpg = false;
     FILE *current_file;
-    char filename[100];
+    char filename[8];
     int current_file_number = 0;
     bool found_jpg = false;
 
@@ -56,7 +56,7 @@ int main(int argc, char *argv[])
              sprintf(filename ,"%03i.jpg",current_file_number);
              current_file = fopen(filename,"w");
 
-             fwrite(buffer,sizeof(BYTE),bytes_read,current_file);
+             fwrite(buffer,sizeof(BYTE),Block_size,current_file);
              current_file_number++;
 
          }
