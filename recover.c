@@ -60,12 +60,12 @@ int main(int argc, char *argv[])
              current_file_number++;
 
          }
-         
+
          else
          {
             if(found_jpg)
             {
-                fwrite(buffer,sizeof(BYTE),Block_size,current_file);
+                fwrite(buffer,sizeof(BYTE),bytes_read,current_file);
             }
          }
 
