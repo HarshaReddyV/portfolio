@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
 
          sprintf(filename,"%03i.jpg", counter);
          outfile = fopen(filename,"w");
-         fwrite(outfile,sizeof(BYTE),block_size,infile);
+         fwrite(outfile,sizeof(BYTE),1,infile);
          counter++;
 
 
@@ -53,7 +53,7 @@ int main(int argc, char *argv[])
      {
          if(already_jpg)
          {
-             fwrite(outfile,sizeof(BYTE),block_size,infile);
+             fwrite(outfile,sizeof(BYTE),1,infile);
          }
      }
 
