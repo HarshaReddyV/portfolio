@@ -19,7 +19,7 @@ int main(int argc, string argv[])
     BYTE buffer[Block_size];
     size_t bytes_read;
     bool is_first_jpg = false;
-    FILE *current_file = NULL;
+    FILE* current_file = NULL;
     char filename[8];
     int current_file_number = 0;
     bool found_jpg = false;
