@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
       return 1;
   }
 
-  FILE *infile = fopen(argv[1], "r");
+  FILE* infile = fopen(argv[1], "r");
   if(infile == NULL)
   {
       printf("file not found\n");
@@ -24,15 +24,15 @@ int main(int argc, char *argv[])
 
 
   BYTE buffer[block_size];
-  bool already_jpg;
+  bool already_jpg = false;
   bool found_jpg;
-  FILE *outfile;
+  FILE* outfile;
   char filename[8];
 
   int counter = 0;
 
 
-  while(fread(buffer,sizeof(BYTE),block_size,infile)|| feof(infile)==0)
+  while(fread(buffer,block_size,1,infile)|| feof(infile)==0)
   {
 
      if(buffer[0]==0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] * 0xf0 == 0xe0) )
@@ -56,13 +56,13 @@ int main(int argc, char *argv[])
          {
              return 1;
          }
-         fwrite(buffer,sizeof(BYTE),1,outfile);
+         fwrite(buffer,block_size,1,outfile);
          counter++;
 
      }
      else if (already_jpg == true)
      {
-          fwrite(buffer,sizeof(BYTE),1,outfile);
+          fwrite(buffer,block_size,1,outfile);
      }
 
   }
