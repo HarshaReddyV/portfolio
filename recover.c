@@ -56,13 +56,13 @@ int main(int argc, char *argv[])
          {
              return 1;
          }
-         fwrite(buffer,block_size,1,outfile);
+         fwrite(buffer,sizeof(BYTE),1,outfile);
          counter++;
 
      }
      else if (already_jpg == true)
      {
-          fwrite(buffer,block_size,1,outfile);
+          fwrite(buffer,sizeof(BYTE),1,outfile);
      }
 
   }
