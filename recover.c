@@ -1,84 +1,66 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include<stdint.h>
 #include<stdbool.h>
-#include<cs50.h>
+#include<stdint.h>
+#define block_size 512
 
-#define Block_size 512
-
-int main(int argc, string argv[])
+int main(int argc, char *argv[])
 {
+  if(argc != 2)
+  {
+      printf("usage recover ./card.raw\n");
+      return 1;
+  }
 
-   if(argc != 2)
-   {
-       printf("usage: ./recover image.raw");
-       return 1;
-   }
+  FILE *infile = fopen(argv[1], "r");
+  if(infile == NULL)
+  {
+      fclose(infile);
+      return 1;
+  }
 
-    typedef uint8_t BYTE;
-    BYTE buffer[Block_size];
-    size_t bytes_read;
-    bool is_first_jpg = false;
-    FILE* current_file = NULL;
-    char filename[8];
-    int current_file_number = 0;
-    bool found_jpg = false;
+  typedef uint8_t BYTE;
 
-    FILE* infile = fopen(argv[1],"r");
-    if (infile == NULL)
-    {
-        fclose(infile);
-        printf("Could not open file.\n");
-        return 1;
-    }
+  BYTE buffer[block_size];
+  bool already_jpg = false;
+  bool found_jpg = false;
+  FILE *outfile = NULL;
+  char filename[8];
+  int counter = 0;
 
-    //checking jpg type
-    while(true)
-    {
-        bytes_read = fread(buffer,sizeof(BYTE),512,infile);
-
-        if(bytes_read == 0)
-        {
-            break;
-        }
-
-         if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3]*0xf0) == 0xe0 )
+  while(fread(buffer,block_size,1,infile))
+  {
+     if(buffer[0]==0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] * 0xf0 == 0xe0) )
+     {
+         found_jpg = true;
+         if(!already_jpg)
          {
-             found_jpg = true;
-
-             if(!is_first_jpg)
-             {
-                 is_first_jpg = true;
-             }
-             else
-             {
-                 fclose(current_file);
-             }
-
-             sprintf(filename ,"%03i.jpg",current_file_number);
-             current_file = fopen(filename,"w");
-
-             fwrite(buffer,sizeof(BYTE),Block_size,current_file);
-             current_file_number++;
-
+             already_jpg = true;
          }
-
          else
          {
-            if(found_jpg)
-            {
-                fwrite(buffer,sizeof(BYTE),bytes_read,current_file);
-            }
+             fclose(outfile);
          }
 
+         sprintf(filename,"%03i.jpg", counter);
+         outfile = fopen(filename,"w");
+         fwrite(outfile,sizeof(BYTE),block_size,infile);
+         counter++;
 
-    }
 
+     }
+     else
+     {
+         if(already_jpg)
+         {
+             fwrite(outfile,sizeof(BYTE),block_size,infile);
+         }
+     }
+
+  }
 
 fclose(infile);
-
+fclose(outfile);
 return 0;
 
-
 }
-
