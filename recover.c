@@ -41,15 +41,13 @@ int main(int argc, char *argv[])
          if(already_jpg == false)
          {
              already_jpg = true;
-
          }
-         else if(outfile != NULL)
+
+         if(outfile != NULL)
          {
              fclose(outfile);
          }
-
          sprintf(filename,"%03i.jpg", counter);
-
          outfile = fopen(filename,"w");
 
          if(outfile == NULL)
@@ -58,7 +56,6 @@ int main(int argc, char *argv[])
          }
          fwrite(buffer,block_size,1,outfile);
          counter++;
-
      }
      else if (already_jpg == true)
      {
