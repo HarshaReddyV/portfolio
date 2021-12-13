@@ -2,7 +2,10 @@
 #include <stdlib.h>
 #include<stdbool.h>
 #include<stdint.h>
+
 #define block_size 512
+#define file_size 8
+typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
 {
@@ -15,27 +18,31 @@ int main(int argc, char *argv[])
   FILE *infile = fopen(argv[1], "r");
   if(infile == NULL)
   {
-      fclose(infile);
+      printf("file not found\n");
       return 1;
   }
 
-  typedef uint8_t BYTE;
+
 
   BYTE buffer[block_size];
-  bool already_jpg = false;
-  bool found_jpg = false;
-  FILE *outfile = NULL;
-  char filename[8];
+  bool already_jpg;
+  bool found_jpg;
+  FILE *outfile;
+  char filename[file_size];
+
   int counter = 0;
+
 
   while(fread(buffer,block_size,1,infile))
   {
+
      if(buffer[0]==0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] * 0xf0 == 0xe0) )
      {
          found_jpg = true;
-         if(!already_jpg)
+         if(already_jpg == false)
          {
              already_jpg = true;
+
          }
          else
          {
@@ -44,23 +51,23 @@ int main(int argc, char *argv[])
 
          sprintf(filename,"%03i.jpg", counter);
          outfile = fopen(filename,"w");
-         fwrite(outfile,sizeof(BYTE),1,infile);
+         if(outfile == NULL)
+         {
+             return 1;
+         }
+         fwrite(buffer,block_size,1,outfile);
          counter++;
 
-
      }
-     else
+     else if (already_jpg == true)
      {
-         if(already_jpg)
-         {
-             fwrite(outfile,sizeof(BYTE),1,infile);
-         }
+          fwrite(buffer,block_size,1,outfile);
      }
 
   }
 
+
 fclose(infile);
-fclose(outfile);
 return 0;
 
 }
