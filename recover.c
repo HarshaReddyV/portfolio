@@ -45,6 +45,7 @@ int main(int argc, char *argv[])
          if(buffer[0] == 0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3]*0xf0) == 0xe0 )
          {
              found_jpg = true;
+
              if(!is_first_jpg)
              {
                  is_first_jpg = true;
@@ -77,7 +78,7 @@ int main(int argc, char *argv[])
 
 
 fclose(infile);
-fclose(current_file);
+
 return 0;
 
 
