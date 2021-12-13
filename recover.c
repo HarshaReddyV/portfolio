@@ -6,7 +6,7 @@
 
 #define Block_size 512
 
-int main(int argc, char *argv[])
+int main(int argc, char* argv[])
 {
 
    if(argc != 2)
@@ -73,8 +73,6 @@ int main(int argc, char *argv[])
 
 
     }
-
-
 
 
 fclose(infile);
