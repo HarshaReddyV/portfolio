@@ -4,7 +4,6 @@
 #include<stdint.h>
 
 #define block_size 512
-#define file_size 8
 typedef uint8_t BYTE;
 
 int main(int argc, char *argv[])
@@ -28,12 +27,12 @@ int main(int argc, char *argv[])
   bool already_jpg;
   bool found_jpg;
   FILE *outfile;
-  char filename[file_size];
+  char filename[8];
 
   int counter = 0;
 
 
-  while(fread(buffer,block_size,1,infile))
+  while(fread(buffer,sizeof(BYTE),block_size,infile)|| feof(infile)==0)
   {
 
      if(buffer[0]==0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] * 0xf0 == 0xe0) )
@@ -44,13 +43,15 @@ int main(int argc, char *argv[])
              already_jpg = true;
 
          }
-         else
+         else if(outfile != NULL)
          {
              fclose(outfile);
          }
 
          sprintf(filename,"%03i.jpg", counter);
+
          outfile = fopen(filename,"w");
+
          if(outfile == NULL)
          {
              return 1;
