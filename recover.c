@@ -24,9 +24,10 @@ int main(int argc, char *argv[])
     int current_file_number = 0;
     bool found_jpg = false;
 
-    FILE *infile = fopen(argv[1],"r");
+    FILE* infile = fopen(argv[1],"r");
     if (infile == NULL)
     {
+        fclose(infile);
         printf("Could not open file.\n");
         return 1;
     }
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
     //checking jpg type
     while(true)
     {
-        bytes_read = fread(buffer,sizeof(BYTE),1,infile);
+        bytes_read = fread(buffer,sizeof(BYTE),512,infile);
 
         if(bytes_read == 0)
         {
