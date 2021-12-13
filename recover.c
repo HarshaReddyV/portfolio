@@ -6,7 +6,7 @@
 
 #define Block_size 512
 
-int main(int argc, char* argv[])
+int main(int argc, string argv[])
 {
 
    if(argc != 2)
