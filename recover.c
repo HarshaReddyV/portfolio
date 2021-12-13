@@ -28,15 +28,23 @@ int main(int argc, char *argv[])
   bool found_jpg;
   FILE* outfile;
   char filename[8];
+  size_t bytes_read;
 
   int counter = 0;
 
 
-  while(fread(buffer,block_size,1,infile)|| feof(infile)==0)
+  while(true)
   {
+     bytes_read = fread(buffer,block_size,1,infile);
+      if(bytes_read == 0)
+      {
+          break;
+      }
 
-     if(buffer[0]==0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && (buffer[3] * 0xf0 == 0xe0) )
-     {
+
+       if(buffer[0]==0xff && buffer[1] == 0xd8 && buffer[2] == 0xff && ((buffer[3] & 0xf0) == 0xe0) )
+       {
+
          found_jpg = true;
          if(already_jpg == false)
          {
@@ -48,6 +56,7 @@ int main(int argc, char *argv[])
              fclose(outfile);
          }
          sprintf(filename,"%03i.jpg", counter);
+
          outfile = fopen(filename,"w");
 
          if(outfile == NULL)
