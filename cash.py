@@ -1,9 +1,10 @@
-from cs50 import get_int
+from cs50 import get_float
 
 while True:
-    p = round(100 * get_int("Enter the Amount-$:"))
-    if p>=0:
+    a = get_float("Enter the Amount-$:")
+    if a>=0:
       break
+p = round(100 * a)
 coins = 0
 while  p >= 25:
     p = p - 25
