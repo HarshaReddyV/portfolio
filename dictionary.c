@@ -109,7 +109,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    for(int i=0; i < (N+1); i++)
+    for(int i=0; i < N; i++)
     {
          node *head = table[i];
          node *cursor = head;
@@ -118,8 +118,9 @@ bool unload(void)
          while(cursor != NULL)
          {
              cursor = cursor->next;
+              temp = cursor;
              free(temp);
-             temp = cursor;
+
          }
 
     }
