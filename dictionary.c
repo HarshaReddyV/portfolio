@@ -21,7 +21,7 @@ typedef struct node
 node;
 
 // Number of buckets in hash table
-const unsigned int N = ( LENGTH + 1 ) * 'z';
+const unsigned int N = (LENGTH + 1) *'z';
 
 // Hash table
 int total_words = 0;
@@ -33,14 +33,14 @@ bool check(const char *word)
     // TODO
     int index = hash(word);
     node *cursor = table[index];
-    while(cursor != NULL)
+    while (cursor != NULL)
     {
-         if(strcasecmp(cursor->word, word) == 0)
-         {
-             return true;
-         }
+        if (strcasecmp(cursor->word, word) == 0)
+        {
+            return true;
+        }
 
-         cursor = cursor->next;
+        cursor = cursor->next;
     }
 
 
@@ -52,9 +52,9 @@ unsigned int hash(const char *word)
 {
     // TODO
     int sum = 0;
-    for(int i=0;i<strlen(word);i++)
+    for (int i = 0; i < strlen(word); i++)
     {
-       sum += tolower(word[i]);
+        sum += tolower(word[i]);
     }
     return (sum % N);
 }
@@ -63,17 +63,17 @@ unsigned int hash(const char *word)
 bool load(const char *dictionary)
 {
     // TODO
-    FILE *file = fopen(dictionary,"r");
-    if(file == NULL)
+    FILE *file = fopen(dictionary, "r");
+    if (file == NULL)
     {
-      return false;
+        return false;
     }
     char word[LENGTH + 1];
 
-    while(fscanf(file,"%s",word) != EOF)
+    while (fscanf(file, "%s", word) != EOF)
     {
         node *n = malloc(sizeof(node));
-        if(n == NULL)
+        if (n == NULL)
         {
             return false;
         }
@@ -81,14 +81,14 @@ bool load(const char *dictionary)
         n->next = NULL;
 
         int index = hash(word);
-        if(table[index] == NULL)
+        if (table[index] == NULL)
         {
             table[index] = n;
         }
         else
         {
-           n->next = table[index];
-           table[index] = n;
+            n->next = table[index];
+            table[index] = n;
         }
 
         total_words ++;
@@ -109,20 +109,20 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    for(int i=0; i < N; i++)
+    for (int i = 0; i < N; i++)
     {
-         node *head = table[i];
-         node *cursor = head;
-         node *temp = cursor;
+        node *head = table[i];
+        node *cursor = head;
+        node *temp = cursor;
 
-         while(cursor != NULL)
-         {
-             cursor = cursor->next;
-             free(temp);
-             temp = cursor;
+        while (cursor != NULL)
+        {
+            cursor = cursor->next;
+            free(temp);
+            temp = cursor;
 
 
-         }
+        }
 
     }
 
