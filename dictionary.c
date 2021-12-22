@@ -93,7 +93,7 @@ bool load(const char *dictionary)
 
         total_words ++;
     }
-
+    fclose(file);
     return true;
 }
 
@@ -118,7 +118,7 @@ bool unload(void)
          while(cursor != NULL)
          {
              cursor = cursor->next;
-              temp = cursor;
+             temp = cursor;
              free(temp);
 
          }
