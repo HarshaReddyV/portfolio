@@ -113,6 +113,7 @@ bool unload(void)
     {
          node *head = table[i];
          node *cursor = head;
+         cursor = NULL;
          node *temp = head;
 
          while(cursor != NULL)
