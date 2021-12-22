@@ -90,6 +90,8 @@ bool load(const char *dictionary)
            n->next = table[index];
            table[index] = n;
         }
+
+        total_words ++;
     }
 
     return true;
@@ -107,7 +109,7 @@ unsigned int size(void)
 bool unload(void)
 {
     // TODO
-    for(int i=0; i<N; i++)
+    for(int i=0; i < N; i++)
     {
          node *head = table[i];
          node *cursor = head;
