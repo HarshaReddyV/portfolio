@@ -28,7 +28,7 @@ def main():
             print(f"{row['name']}")
             database_file.close()
             return
-    print("no match")
+    print("No match")
     database_file.close()
 
 def consec_repeats(str, dna):
