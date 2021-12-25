@@ -43,7 +43,7 @@ def match(strs, dna_fingerprint, row):
             return False
         elif dna_fingerprint['AATG'] != int(row['AATG']):
             return False
-        elif dna_fingerprint['GATA'] != int(row['GATA']):
+        elif dna_fingerprint['TTTTTTCT'] != int(row['TTTTTTCT']):
             return False
         else:
             return True
