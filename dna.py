@@ -42,5 +42,5 @@ def match(strs, dna_fingerprint, row):
         if dna_fingerprint[str] != int(row[str]):
             return False
         return True
-if __name__ == "__main__":
-    main()
+
+main()
