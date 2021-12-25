@@ -40,7 +40,7 @@ def consec_repeats(str, dna):
 def match(strs, dna_fingerprint, row):
     for str in strs:
         if dna_fingerprint[str] != int(row[str]):
-            return True
-        return False
+            return False
+        return True
 if __name__ == "__main__":
     main()
