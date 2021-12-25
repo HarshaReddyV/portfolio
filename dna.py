@@ -8,8 +8,8 @@ def main():
     if len(argv) != 3:
       sys.exit("Usage : python dna.py str txt  csv file")
 
-    database_file = open(argv[1])
-    dna_file = open(argv[2])
+    database_file = open("./"+ argv[1])
+    dna_file = open("./"+ argv[2])
 
     database_reader = csv.DictReader(database_file)
     strs = database_reader.fieldnames[1:]
