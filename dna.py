@@ -35,8 +35,8 @@ def consec_repeats(str, dna):
     i = 0
     while str*(i+1) in dna:
         i+=1
-
     return i
+
 def match(strs, dna_fingerprint, row):
     for str in strs:
         if dna_fingerprint[str] != int(row[str]):
