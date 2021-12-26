@@ -39,9 +39,9 @@ def consec_repeats(str, dna):
 
 def match(strs, dna_fingerprint, row):
     for str in strs:
-        if dna_fingerprint[str] != int(row[str]):
+        if dna_fingerprint['AGATC'] != int(row['AGATC']):
             return False
-        elif dna_fingerprint[str] == int(row[str]) and dna_fingerprint['AATG'] == int(row['AATG']) and dna_fingerprint['TATC'] == int(row['TATC']):
+        elif dna_fingerprint['AGATC'] == int(row['AGATC']) and dna_fingerprint['AATG'] == int(row['AATG']) and dna_fingerprint['TATC'] != int(row['TATC']):
             return True
         else:
             return False
