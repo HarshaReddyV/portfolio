@@ -43,13 +43,12 @@ def match(strs, dna_fingerprint, row):
         if dna_fingerprint[str] != int(row[str]):
             return False
         elif dna_fingerprint[str] == int(row[str]):
-
             if dna_fingerprint['AATG'] == int(row['AATG']) and dna_fingerprint['TATC'] == int(row['TATC']):
-                if dna_fingerprint['TCTG'] == int(row['TCTG']):
-                  return True
+                if 'TCTG' in dna_fingerprint.keys():
+                    if dna_fingerprint['TCTG'] == int(row['TCTG']):
+                       return True
                 else:
-                    return False
-                return True
+                    return True
             else:
                 return False
         else:
