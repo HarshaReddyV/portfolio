@@ -23,6 +23,7 @@ def main():
         dna_fingerprint[str] = consec_repeats(str,dna)
 
 
+
     for row in database_reader:
         if match(strs, dna_fingerprint, row):
             print(f"{row['name']}")
@@ -42,8 +43,10 @@ def match(strs, dna_fingerprint, row):
         if dna_fingerprint[str] != int(row[str]):
             return False
         elif dna_fingerprint[str] == int(row[str]):
+
             if dna_fingerprint['AATG'] == int(row['AATG']) and dna_fingerprint['TATC'] == int(row['TATC']):
-                return True
+                if dna_fingerprint['TCTG'] == int(row['TCTG']):
+                  return True
             else:
                 return False
         else:
