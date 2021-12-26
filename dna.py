@@ -41,7 +41,7 @@ def match(strs, dna_fingerprint, row):
     for str in strs:
         if dna_fingerprint[str] != int(row[str]):
             return False
-        elif dna_fingerprint[str] == int(row[str]) and dna_fingerprint['AATG'] == int(row['AATG']) and dna_fingerprint['TATC'] != int(row['TATC']):
+        elif dna_fingerprint[str] == int(row[str]) and dna_fingerprint['AATG'] == int(row['AATG']) and dna_fingerprint['TATC'] == int(row['TATC']):
             return True
         else:
             return False
