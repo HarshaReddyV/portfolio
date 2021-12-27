@@ -1,4 +1,1 @@
-SELECT name
-FROM people JOIN stars ON people.id = stars.person_id
-INNER JOIN movies ON movies.id = stars.movie_id
-WHERE title = "Toy story";
+SELECT name FROM people,stars,movies WHERE movies.title ="Toy Story" AND people.id = stars.person_id AND stars.movie_id = movies.id;
