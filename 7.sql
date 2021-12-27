@@ -1,1 +1,1 @@
-SELECT Avg(energy) FROM songs WHERE artist_id LIKE "%Drake%";
+SELECT Avg(energy) FROM songs WHERE id=(SELECT id FROM artists WHERE name LIKE "%drake%");
