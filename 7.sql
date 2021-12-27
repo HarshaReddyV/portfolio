@@ -1,0 +1,1 @@
+SELECT Avg(energy) FROM songs WHERE artist_id LIKE "%Drake%";
