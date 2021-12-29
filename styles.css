@@ -1,0 +1,67 @@
+img
+{
+   height: 100px;
+   margin-left:20px;
+}
+header
+{
+  height: 110px;
+  background-color: skyblue;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+li
+{
+    list-style:none;
+    display:inline-block;
+
+}
+ul li a
+{
+    padding:12px;
+    background-color:white;
+    margin:10px;
+    border-radius:25px;
+    cursor:pointer;
+    color:red;
+    font-size: 20px;
+}
+ul li a:link
+{
+  text-decoration:none;
+  color:red;
+}
+ul li a:hover
+{
+    padding:12px;
+    background-color:yellow;
+    margin:10px;
+    border-radius:25px;
+    cursor:pointer;
+    color:purple;
+}
+
+#map
+{
+   padding-top:50px;
+}
+
+#info
+{
+    display: grid;
+    height:300px;
+    grid-template-columns: 70% 30%;
+    background-color:yellow;
+    margin:10px;
+
+}
+#code
+{
+    height:300px;
+}
+#input
+{
+   margin:20px;
+}
