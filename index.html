@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+
+        <script>
+
+            // TODO: Add code to check answers to questions
+             document.addEventListener('DOMContentLoaded',function(){
+
+                 let correct = document.querySelector('#right');
+                   correct.addEventListener('click', function() {
+                      correct.style.backgroundColor = 'green';
+                      document.querySelector('#feedback').innerHTML = 'Correct..!';
+                   });
+
+                   let incorrect = document.querySelectorAll('#wrong');
+                   for( let i=0; i<incorrect.length; i++)
+                   {
+                         incorrect[i].addEventListener('click',function(){
+                         incorrect[i].style.backgroundColor = 'red';
+                         document.querySelector('#feedback').innerHTML = 'oops..';
+                       });
+                   }
+
+                    document.querySelector('#check').addEventListener('click',function(){
+                        let input = document.querySelector('#input');
+                        if(input.value == '7'){
+                                document.querySelector('#feedback2').innerHTML = 'Correct';
+                        }
+                        else
+                        {
+                            input.style.backgroundColor = 'red';
+                            document.querySelector('#feedback2').innerHTML = 'wrong';
+                        }
+
+
+                    })
+
+             });
+
+        </script>
+
+    </head>
+    <body>
+
+        <div class="jumbotron">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+
+            <div class="section">
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+
+                 <h3>Why did chicken cross the road?</h3>
+                 <button id="wrong">It's scared</button>
+                 <button id="wrong">Running away from KFC</button>
+                 <button id="right">Beacause it can</button>
+                 <p id='feedback'> </p>
+
+            </div>
+
+            <div class="section">
+
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>How many continents in the world?</h3>
+
+                 <input id="input" type="text">
+                 <button id="check">Check Answer</button>
+                 <p id='feedback2'> </p>
+
+
+            </div>
+
+        </div>
+    </body>
+</html>
