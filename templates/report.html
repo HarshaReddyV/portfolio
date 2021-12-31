@@ -1,0 +1,33 @@
+{% extends "index.html" %}
+
+{% block title %}
+    Your Tax Report
+{% endblock %}
+
+{% block main %}
+
+  <h2>All Reports</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Personal</th>
+                            <th>Sole trader</th>
+                            <th>Business</th>
+                            <th>Total tax</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- TODO: Loop through the database entries to display them in this table -->
+
+                        {% for allreport in allreports %}
+                        <tr>
+                             <td>{{ allreports.personal_income }} </td>
+                              <td> {{ allreports.sole_income}} </td>
+                              <td> {{ allreports.business_income}} </td>
+                              <td> {{ allreports.total}} </td>
+                        </tr>
+
+                        {% endfor %}
+                    </tbody>
+                </table>
+{% endblock %}

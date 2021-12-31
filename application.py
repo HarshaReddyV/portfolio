@@ -53,7 +53,9 @@ def index():
 
         db.execute("INSERT INTO records(personal_income,sole_income,business_income,total) VALUES(?,?,?,?)", p,s,b,tt)
 
-        return render_template("index.html")
+        allreports = db.execute("SELECT * FROM records")
+
+        return render_template("report.html", allreports=allreports)
 
 
     return render_template("index.html")
