@@ -1,0 +1,64 @@
+h1
+{
+    color:Purple;
+}
+header
+{
+    background-color:white;
+    height:110px;
+    width:100%;
+    display:flex;
+    justify-content:space-around;
+    align-items:center;
+    background-color:pink;
+}
+
+li
+{
+  list-style:none;
+  display: inline-block;
+  padding:10px;
+  border-radius: 25px;
+
+  font-size:25px;
+  margin:20px;
+  cursor:pointer;
+
+}
+li a
+{
+  text-decoration:none;
+  color:skyblue;
+
+}
+li:hover
+{
+  list-style:none;
+  display: inline-block;
+  padding:20px;
+  border-radius:30px;
+  background-color:red;
+  font-size:25px;
+  margin:20px;
+  cursor:pointer;
+
+}
+li a:hover
+{
+  text-decoration:none;
+  color:white;
+
+}
+#heading
+{
+    display:flex;
+   justify-content:space-around;
+   padding-bottom:50px;
+}
+
+#button
+{
+    display:flex;
+   justify-content:space-around;
+   padding-top:50px;
+}
