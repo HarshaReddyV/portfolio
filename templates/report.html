@@ -7,7 +7,7 @@
 {% block main %}
 
   <h2>All Reports</h2>
-                <table>
+                <table class="table">
                     <thead>
                         <tr>
                             <th>Personal</th>
@@ -24,7 +24,7 @@
                              <td>{{ allreport.personal_income }} </td>
                               <td> {{ allreport.sole_income}} </td>
                               <td> {{ allreport.business_income}} </td>
-                              <td> {{ allreport.total}} </td>
+                              <td> <span style="color:orange">{{ allreport.total}}</span> </td>
                         </tr>
 
                         {% endfor %}
