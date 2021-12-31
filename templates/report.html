@@ -21,10 +21,10 @@
 
                         {% for allreport in allreports %}
                         <tr>
-                             <td>{{ allreport.personal_income }} </td>
-                              <td> {{ allreport.sole_income}} </td>
-                              <td> {{ allreport.business_income}} </td>
-                              <td> <span style="color:orange">{{ allreport.total}}</span> </td>
+                             <td>$ {{ allreport.personal_income }} </td>
+                              <td> $ {{ allreport.sole_income}} </td>
+                              <td> $ {{ allreport.business_income}} </td>
+                              <td> <span style="color:orange">$ {{ allreport.total}}</span> </td>
                         </tr>
 
                         {% endfor %}
