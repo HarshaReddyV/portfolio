@@ -1,8 +1,8 @@
-This website is built to caluculate the users tax rate for the year on various incomes in Australia
+###This website is built to caluculate the users tax rate for the year on various incomes in Australia###
 There are  basically three input asking for user incomes for the year namely from different sources;
-Personal income: income earned as salary and wages which is taxed using tax bracket for different levels of income
-Sole trader: income from contract work as a solo operator of the business taxed at a rate used for personal income for this financial year
-Business income: income through business activities is taxed at a flat rate for this financial year
+***Personal income***: income earned as salary and wages which is taxed using tax bracket for different levels of income
+***Sole trader***: income from contract work as a solo operator of the business taxed at a rate used for personal income for this financial year
+***Business income***: income through business activities is taxed at a flat rate for this financial year
 Each income has it's own tax rate and brackets and we have to figure  out how much tax they will be paying for the year
 input is processed in python and flask and the final tax they have to pay will be the output of the program
 i have also created a database in order to store all the searches that's been made on the website and display them on the homepage after the user
