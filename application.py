@@ -13,9 +13,11 @@ def index():
 
     if request.method == "POST":
 
-        personal = request.form.get("personal")
-        sole = request.form.get("sole")
-        business = request.form.get("business")
+        p = request.form.get("personal")
+        s = request.form.get("sole")
+        b = request.form.get("business")
+
+
 
 
     return render_template("index.html")
